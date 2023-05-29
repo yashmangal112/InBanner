@@ -766,7 +766,7 @@ select option {
 
 .bottom-bar__logo-cont img {
     width: 100%;
-    border-radius: 1rem;
+    /* border-radius: 1rem; */
 }
 
 .bottom-bar__download-btn {

@@ -1,4 +1,4 @@
-import logo from './logo.svg';
+import logo from './logo.png';
 import html2canvas from 'html2canvas';
 // import pattern_1 from './pattern_1.png'
 import light from './light.svg'
@@ -323,7 +323,7 @@ function App() {
 
   <section className='bottom-bar' style={{background}}>
     <div className="bottom-bar__logo-cont">
-      <img src="./assets/png/logo-cr.png" alt="Linkeder Logo" />
+      <img src={logo} alt="Linkeder Logo" style={{width: '38px'}} />
     </div>
 
     {/* <button className="bottom-bar__download-btn" >Download Image 🔥</button> */}
