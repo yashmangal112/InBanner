@@ -180,7 +180,7 @@ function App() {
         ⚡
       </div>
     </div>
-    <div className="box" >
+    <div className="main__post" >
       <div className="main__post-bg" id='capture'  style={{backgroundImage, backgroundColor}} >
         <div className={`main__post-container ${isDarkMode ? 'dark-mode' : 'light-mode'}`} id='divToDownload' >
           <div className="main__post-upper">
