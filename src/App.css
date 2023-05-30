@@ -800,6 +800,10 @@ select option {
     }
 }
 
+.main{
+    display: flex;
+    align-items: center;
+}
 /* .main__form-input-msg {
     overflow-y: scroll;
     scrollbar-color: var(--primary-color) #ffffff;
