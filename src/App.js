@@ -125,6 +125,13 @@ function App() {
     }).then(function(canvas) {
           const download_image = canvas.toDataURL('image/png');
           console.log(download_image);
+
+          const link = document.createElement('a');
+          link.href = download_image;
+          link.download = 'div_image.png'; // Specify the download filename
+    
+          // Simulate a click on the link to trigger the download
+          link.click();
           // window.open(download_image)
     })
     
