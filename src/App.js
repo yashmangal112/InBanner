@@ -308,46 +308,10 @@ function App() {
                 id='darkmode-toggle'
             />
             <label onClick={handleModeToggle} className='dark_mode_label' for='darkmode-toggle'>
-              {/* <img src={sun}/> */}
-                {/* <sun/>
-                <moon/> */}
             </label>
         </div>
   </section>
 
-
-  {/*  */}
-  {/* {console.log(`${download_image}`)} */}
-  <div className="preview-modal preview-modal--hide">
-    <div className="preview-modal__cont">
-      <p className="preview-modal__txt">
-        Done! Right-click (or hold down on mobile) on the image and press Save
-        Image to save it to your device.
-      </p>
-      <span className="preview-modal__close">+</span>
-      {/* <img src={download_image}></img> */}
-    </div>
-  </div>
-  {/* Overlay and pop-up content */}
-  <div className="overlay" id="yt-overlay">
-    <div className="yt-popup" id="yt-popup">
-      <span className="yt-close" onclick="closePopup()">
-        ×
-      </span>
-      {/* <iframe width="100%" src="https://www.youtube.com/embed/YOUTUBE_VIDEO_ID?autoplay=1" frameborder="0"
-          allow="autoplay; encrypted-media" allowfullscreen></iframe> */}
-      <iframe
-        src="https://www.youtube.com/embed/Zr-cfaDaW-k"
-        title="YouTube video player"
-        frameBorder={0}
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-        allowFullScreen=""
-      />
-    </div>
-  </div>
-  {/*  */}
-  {/*  */}
-  {/* JavaScript to control the pop-up */}
 </>
 
   );

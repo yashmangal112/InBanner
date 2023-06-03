@@ -800,78 +800,6 @@ select option {
     }
 }
 
-/* .main__form-input-msg {
-    overflow-y: scroll;
-    scrollbar-color: var(--primary-color) #ffffff;
-}
-
-.main__form-input-msg::-webkit-scrollbar {
-    width: 10px;
-}
-
-.main__form-input-msg::-webkit-scrollbar-track {
-    background-color: #ffffff;
-}
-
-.main__form-input-msg::-webkit-scrollbar-thumb {
-    background-color: var(--primary-color);
-} */
-
-
-.preview-modal {
-    padding: 5rem 0;
-    overflow-y: scroll;
-
-    position: fixed;
-    width: 100%;
-    height: 100%;
-    left: 0;
-    top: 0;
-    background: rgba(0, 0, 0, 0.5);
-    z-index: 1000;
-
-}
-
-.preview-modal--hide {
-    display: none;
-}
-
-.preview-modal__cont {
-    position: absolute;
-    top: 5%;
-    left: 50%;
-    width: 90%;
-    max-width: 80rem;
-    background: #fff;
-    transform: translate(-50%);
-    padding: 3rem;
-}
-
-.preview-modal__txt {
-    font-size: 2.5rem;
-    color: #333;
-    margin-bottom: 2rem;
-    line-height: 1.5;
-    width: calc(100% - 8rem);
-}
-
-.preview-modal__close {
-    position: absolute;
-    font-size: 4rem;
-    right: 1rem;
-    top: 1rem;
-    background: green;
-    width: 4rem;
-    height: 4rem;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 50px;
-    background: #ffc0cb;
-    font-weight: 800;
-    transform: rotate(45deg);
-    cursor: pointer;
-}
 
 /* utils */
 
@@ -896,40 +824,6 @@ input[type="color"]::-webkit-color-swatch {
     border: none;
 }
 
-emoji-picker {
-    --num-columns: 6;
-    --emoji-size: 2rem;
-}
-
-
-
-/* code for youtube popup */
-
-/* Style the pop-up overlay */
-.overlay {
-    z-index: 1000;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.5);
-    display: none;
-    /* hide the overlay by default */
-}
-
-/* Style the pop-up content */
-.yt-popup {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    background-color: white;
-    padding: 8px;
-    border-radius: 10px;
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
-    width: 50%;
-}
 
 
 @media (max-width: 56.25em) {
