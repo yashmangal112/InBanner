@@ -1158,3 +1158,6 @@ button:focus #divToDownload{
         padding: 20px 0 0 0;
     }
 }
+.scaled{
+    transform: scale(1);
+}

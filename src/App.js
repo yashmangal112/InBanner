@@ -24,6 +24,8 @@ import pattern_16 from './pattern_16.svg'
 import './App.css';
 import { useState } from 'react'
 import { useRef } from 'react';
+import { createRef } from 'react';
+import * as htmlToImage from "html-to-image";
 import colors from 'tailwindcss/colors'
 const green = colors.green[500]
 const red = colors.red[500]
@@ -65,25 +67,7 @@ function App() {
     }
   }
 
-  // const clickPattern =(pattern)=>{
-  //   // setPattern(backgroundColor)
-  //   // const image: URL({${pattern}});
-  //   // backgroundImage: {`url(${pattern})`}
-  //   // backgroundImage: `url(${pattern})`
-  //   console.log(pattern)
-  //   const image = `${pattern}.svg`;
-  //   console.log(image)
-  //   const backgroundImage = ({pattern})
 
-  //   // const divStyle = {
-  //   //   backgroundImage: `url(${image})`,
-  //   // };
-  //   // {console.log({background})}
-  //   // console.log(backgroundImage)
-  //   // <img src={pattern} alt="User Image" />
-  //   console.log(backgroundImage)
-  //   setPattern(backgroundImage);
-  // }
   const clickPattern =(pattern)=>{
     console.log(pattern)
     const image= `${pattern}.svg`;
@@ -97,65 +81,31 @@ function App() {
     // console.log()
   }
 
+  const [isScaled, setIsScaled] = useState(false);
 
-  // const divStyle = {
-  //   // backgroundImage: `url(${imageUrl})`,
-  //   backgroundColor: {backgroundColor}
-  // };
+  const targetRef = createRef(null);
+  const takeScreenShot = async (node) => {
+    const dataURI = await htmlToImage.toJpeg(node);
+    console.log(dataURI)
+    return dataURI;
+  };
+
+  const download = (image) => {
+    const a = document.createElement("a");
+    a.href = image;
+    // a.download = createFileName(extension, name);
+    a.download = `${name}.jpg`;
+    a.click();
+  };
 
   const handleDownload = () => {
-    const div = document.getElementById('capture');
-
-    // html2canvas(div).then((canvas) => {
-    //   const image = canvas.toDataURL('image/png');
-    //   console.log(image);
-    //   allowTaint: true,
-    //   // useCORS: true
-    //   // You can use the image data URL to display or save the screenshot
-    // });
-
-    html2canvas(div,  {
-      allowTaint: true,
-      scrollX: -window.scrollX,
-      scrollY: -window.scrollY,
-      useCORS: true,
-      logging: true, 
-      letterRendering: 1, // allowTaint: false  useCORS: true
-
-    }).then(function(canvas) {
-          const download_image = canvas.toDataURL('image/png');
-          console.log(download_image);
-
-          const link = document.createElement('a');
-          link.href = download_image;
-          link.download = 'div_image.png'; // Specify the download filename
-    
-          // Simulate a click on the link to trigger the download
-          link.click();
-          // window.open(download_image)
-    })
-    
+    setIsScaled(true);
+    setTimeout(() => {
+      setIsScaled(false);
+    }, 300);
+    takeScreenShot(targetRef.current).then(download);
   }
-  // const targetRef = useRef(null);
 
-  // const handleDownload = () => {
-  //   const canvas = document.createElement('canvas');
-  //   const div = targetRef.current;
-
-  //   canvas.width = div.offsetWidth;
-  //   canvas.height = div.offsetHeight;
-
-  //   const context = canvas.getContext('2d');
-
-  //   // Introduce a delay to ensure the content is fully rendered
-  //   setTimeout(() => {
-  //     context.drawImage(div, 0, 0);
-
-  //     const dataURL = canvas.toDataURL('image/png');
-  //     console.log(dataURL);
-  //     // You can use the dataURL to display or save the captured image
-  //   }, 100);
-  // }
 
 
   const [isDarkMode, setIsDarkMode] = useState(false);
@@ -181,7 +131,7 @@ function App() {
       </div>
     </div>
     <div className="main__post" >
-      <div className="main__post-bg" id='capture'  style={{backgroundImage, backgroundColor}} >
+      <div className={`main__post-bg ${isScaled ? 'scaled' : ''}`} ref={targetRef} style={{backgroundImage, backgroundColor}} >
         <div className={`main__post-container ${isDarkMode ? 'dark-mode' : 'light-mode'}`} id='divToDownload' >
           <div className="main__post-upper">
             <div className="main__post-user">
@@ -222,6 +172,7 @@ function App() {
           <div className="main__post-text-cont">{message}</div>
           {/* <img class="main__post-img" width="100%" style="margin-top: 3rem; border-radius: 10px;"
                       src="./snexv_512.jpg" alt=""> */}
+        {/* </div> */}
         </div>
       </div>
     </div>
@@ -366,6 +317,7 @@ function App() {
 
 
   {/*  */}
+  {/* {console.log(`${download_image}`)} */}
   <div className="preview-modal preview-modal--hide">
     <div className="preview-modal__cont">
       <p className="preview-modal__txt">
