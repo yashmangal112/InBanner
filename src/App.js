@@ -225,6 +225,9 @@ function App() {
         </div>
       </div>
     </div>
+      <div className="downlod_button">
+        <button  onClick={handleDownload} className='bottom-bar__download-btn'>Download Image ❤️</button>
+      </div>
   </main>
   <form action="" className="main__form">
     <div className="main__form-field">
@@ -330,12 +333,12 @@ function App() {
 
   <section className='bottom-bar' style={{background}}>
     <div className="bottom-bar__logo-cont">
-      <img src={logo} alt="Linkeder Logo" style={{width: '38px'}} />
+      <img src={logo} alt="Linkeder Logo" />
     </div>
 
     {/* <button className="bottom-bar__download-btn" >Download Image 🔥</button> */}
     
-    <button onClick={handleDownload} className="bottom-bar__download-btn" >Download Image 🔥</button>
+    {/* <button onClick={handleDownload} className="" >Download Image 🔥</button> */}
     
     <div className='switcher'>
       <button onClick={()=> changeColor(indigo)} data-theme="indigo" className={`theme-button ${(isactive, background === '#6366f1') ? 'isactive' : ''} bg-indigo-500`}></button>

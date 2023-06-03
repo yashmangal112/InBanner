@@ -765,8 +765,8 @@ select option {
 }
 
 .bottom-bar__logo-cont img {
-    width: 100%;
-    border-radius: 1rem;
+    width: 38px;
+    /* border-radius: 1rem; */
 }
 
 .bottom-bar__download-btn {
@@ -1137,3 +1137,24 @@ button:focus #divToDownload{
 .isactive{
     background-image: url(correct.svg);
 } */
+
+
+@media (max-width: 490px){
+    .bottom-bar__logo-cont {
+        width: 40px;
+    }
+    .bottom-bar__logo-cont img {
+        width: 28px;
+    }
+    .switcher{
+        margin-right: 0px;
+    }
+}
+@media (max-width: 900px) {
+    .bottom-bar__download-btn{
+        margin: auto;
+    }
+    .downlod_button{
+        padding: 20px 0 0 0;
+    }
+}
