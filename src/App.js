@@ -115,19 +115,26 @@ function App() {
     // You can add additional logic here to handle any theme changes in your application
   };
 
+  // for only mobile devices
+  const showAlertOnMobile = () => {
+    const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+    if (isMobile) {
+      alert('for good experince, open it on laptop or tablet view');
+    }
+  };
+
   return (
     <>
   {/* Hello world */}
+  {showAlertOnMobile()}
   <main className="main">
     <div className="main__app-info">
       <div className="main__app-info-content">
-        Welcome to <b>Linkeder!</b> A tool to quickly create a stunning
-        tweet-style Linkedin profile header (banner) to boost your personal
-        brand made by{" "}
-        <a href="https://linkedin.com/in/rammcodes">
-          <b>Ram Maheshwari</b>
+        Welcome to <b>InBanner!</b> A tool to effortlessly create personalized, visually captivating LinkedIn banners to showcase your personal brand made by{" "}
+        <a href="https://yashmangal112.vercel.app">
+          <b>Yash Mangal</b>
         </a>{" "}
-        ⚡
+       ❤️
       </div>
     </div>
     <div className="main__post" >

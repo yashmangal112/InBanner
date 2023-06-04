@@ -283,7 +283,7 @@ body {
     width: 100%;
     max-width: 55rem;
     line-height: 1.4;
-
+    text-align: justify;
 
     background: #fff;
     padding: 3rem;
@@ -765,7 +765,7 @@ select option {
 }
 
 .bottom-bar__logo-cont img {
-    width: 38px;
+    width: 35px;
     /* border-radius: 1rem; */
 }
 
