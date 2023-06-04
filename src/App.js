@@ -115,18 +115,10 @@ function App() {
     // You can add additional logic here to handle any theme changes in your application
   };
 
-  // for only mobile devices
-  const showAlertOnMobile = () => {
-    const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
-    if (isMobile) {
-      alert('for good experince, open it on laptop or tablet view');
-    }
-  };
 
   return (
     <>
   {/* Hello world */}
-  {showAlertOnMobile()}
   <main className="main">
     <div className="main__app-info">
       <div className="main__app-info-content">
@@ -184,7 +176,7 @@ function App() {
       </div>
     </div>
       <div className="downlod_button">
-        <button  onClick={handleDownload} className='bottom-bar__download-btn'>Download Image ❤️</button>
+        <button  onClick={handleDownload} className='bottom-bar__download-btn'>Download Image 🔥</button>
       </div>
   </main>
   <form action="" className="main__form">
